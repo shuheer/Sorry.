@@ -1,0 +1,729 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Apology for Ruhiya Anjum 💌</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Quicksand & Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Quicksand', 'sans-serif'],
+                        body: ['Nunito', 'sans-serif'],
+                    },
+                    colors: {
+                        cream: '#FFF9F5',
+                        blush: '#FFF0F5',
+                        petal: '#FFE2EC',
+                        lavender: '#F3ECFF',
+                        lavenderBorder: '#E5D4FF',
+                        coral: '#FF6B8B',
+                        coralDark: '#E85376',
+                        cocoa: '#54413C',
+                        cocoaLight: '#856D67',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Soft pastel background with blush, warm cream, and soft lavender gradients */
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #FFF9F5;
+            background-image:
+                radial-gradient(circle at 12% 18%, rgba(255, 224, 236, 0.85) 0%, transparent 48%),
+                radial-gradient(circle at 88% 22%, rgba(235, 222, 255, 0.85) 0%, transparent 45%),
+                radial-gradient(circle at 80% 85%, rgba(255, 236, 217, 0.85) 0%, transparent 50%),
+                radial-gradient(circle at 18% 82%, rgba(243, 232, 255, 0.75) 0%, transparent 45%);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /* Ambient background sparkle & heart animations */
+        @keyframes floatSlow {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.45;
+            }
+            50% {
+                transform: translateY(-18px) rotate(8deg);
+                opacity: 0.9;
+            }
+        }
+
+        @keyframes gentleBounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-7px); }
+        }
+
+        @keyframes happyJump {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            35% { transform: translateY(-15px) scale(1.04); }
+            65% { transform: translateY(-3px) scale(0.98); }
+        }
+
+        @keyframes heartPop {
+            0%, 100% {
+                transform: scale(0.75) translateY(0px);
+                opacity: 0.75;
+            }
+            50% {
+                transform: scale(1.15) translateY(-6px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-float-1 { animation: floatSlow 5.5s ease-in-out infinite; }
+        .animate-float-2 { animation: floatSlow 7s ease-in-out infinite 1.2s; }
+        .animate-float-3 { animation: floatSlow 6.2s ease-in-out infinite 2.4s; }
+        .animate-gentle-bounce { animation: gentleBounce 3.2s ease-in-out infinite; }
+        .animate-happy-jump { animation: happyJump 1.1s ease-in-out infinite; }
+        .animate-heart-pop { animation: heartPop 1.8s ease-in-out infinite; }
+        .animate-fade-in { animation: fadeSlideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+        /* Smooth transitions for interactive buttons */
+        #no-btn {
+            transition: left 0.24s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        top 0.24s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        transform 0.2s ease,
+                        background-color 0.2s ease;
+        }
+
+        #yes-btn {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 0.3s ease,
+                        background-color 0.2s ease;
+        }
+
+        /* Custom pastel checkbox styling */
+        .crime-checkbox:checked + .crime-label {
+            color: #E85376;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-6 text-cocoa relative selection:bg-petal selection:text-coralDark">
+
+    <!-- Pastel Confetti & Floating Hearts Canvas Overlay -->
+    <canvas id="celebration-canvas" class="fixed inset-0 pointer-events-none z-50 w-full h-full"></canvas>
+
+    <!-- Subtle Floating Background Sparkles & Hearts -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+        <span class="absolute top-[9%] left-[8%] text-2xl sm:text-3xl text-pink-300/75 animate-float-1">♡</span>
+        <span class="absolute top-[16%] right-[11%] text-xl sm:text-2xl text-purple-300/80 animate-float-2">✦</span>
+        <span class="absolute top-[45%] left-[5%] text-lg sm:text-xl text-rose-300/70 animate-float-3">✧</span>
+        <span class="absolute bottom-[22%] left-[10%] text-2xl sm:text-3xl text-purple-300/65 animate-float-2">♡</span>
+        <span class="absolute bottom-[14%] right-[9%] text-2xl sm:text-3xl text-pink-300/75 animate-float-1">♡</span>
+        <span class="absolute top-[64%] right-[6%] text-xl text-amber-300/80 animate-float-3">✦</span>
+    </div>
+
+    <!-- Main Centered Apology Card -->
+    <main class="relative z-10 w-full max-w-md bg-white/88 backdrop-blur-md border-2 border-petal rounded-[2rem] shadow-[0_20px_50px_-14px_rgba(232,83,118,0.2)] p-6 sm:p-8 text-center">
+
+        <!-- Header Badge -->
+        <div class="flex justify-center mb-3">
+            <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-blush via-lavender to-blush border border-lavenderBorder text-coralDark text-xs sm:text-sm font-bold shadow-sm">
+                Official Apology for Ruhiya Anjum 💌
+            </span>
+        </div>
+
+        <!-- Custom Inline SVG Teddy Bear Container -->
+        <div class="flex justify-center mb-2">
+            <!-- State 1: Apologetic Blushing Teddy Bear Holding a Daisy -->
+            <div id="bear-pleading" class="w-36 h-36 sm:w-44 sm:h-44 animate-gentle-bounce">
+                <svg viewBox="0 0 220 220" class="w-full h-full drop-shadow-sm" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cute apologetic blushing teddy bear holding a daisy">
+                    <!-- Soft lavender-blush halo -->
+                    <circle cx="110" cy="115" r="82" fill="#FFF0F5"/>
+                    <circle cx="110" cy="115" r="68" fill="#F6F0FF" opacity="0.55"/>
+
+                    <!-- Bear Ears -->
+                    <circle cx="58" cy="64" r="24" fill="#D9A077"/>
+                    <circle cx="58" cy="64" r="13" fill="#F8C6D0"/>
+                    <circle cx="162" cy="64" r="24" fill="#D9A077"/>
+                    <circle cx="162" cy="64" r="13" fill="#F8C6D0"/>
+
+                    <!-- Bear Body -->
+                    <ellipse cx="110" cy="168" rx="46" ry="38" fill="#D9A077"/>
+                    <ellipse cx="110" cy="172" rx="28" ry="24" fill="#F5DFC6"/>
+
+                    <!-- Bear Head -->
+                    <ellipse cx="110" cy="108" rx="62" ry="54" fill="#E3AE88"/>
+
+                    <!-- Snout -->
+                    <ellipse cx="110" cy="126" rx="22" ry="16" fill="#F8E7D5"/>
+                    <!-- Cute Nose -->
+                    <ellipse cx="110" cy="119" rx="7" ry="5" fill="#54413C"/>
+                    <!-- Apologetic Pouting Mouth -->
+                    <path d="M102 132 Q110 126 118 132" stroke="#54413C" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+
+                    <!-- Rosy Blushing Cheeks -->
+                    <ellipse cx="68" cy="122" rx="12" ry="7" fill="#FF8FA3" opacity="0.6"/>
+                    <ellipse cx="152" cy="122" rx="12" ry="7" fill="#FF8FA3" opacity="0.6"/>
+
+                    <!-- Apologetic Eyebrows -->
+                    <path d="M72 86 Q82 81 90 88" stroke="#54413C" stroke-width="2.6" stroke-linecap="round"/>
+                    <path d="M148 86 Q138 81 130 88" stroke="#54413C" stroke-width="2.6" stroke-linecap="round"/>
+
+                    <!-- Big Watery Pleading Eyes -->
+                    <!-- Left Eye -->
+                    <circle cx="83" cy="104" r="12" fill="#3D2E2A"/>
+                    <circle cx="79" cy="99" r="4.5" fill="#FFFFFF"/>
+                    <circle cx="88" cy="108" r="2.3" fill="#FFFFFF"/>
+                    <path d="M75 113 Q83 118 91 113" stroke="#A6E3FA" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+                    <!-- Right Eye -->
+                    <circle cx="137" cy="104" r="12" fill="#3D2E2A"/>
+                    <circle cx="133" cy="99" r="4.5" fill="#FFFFFF"/>
+                    <circle cx="142" cy="108" r="2.3" fill="#FFFFFF"/>
+                    <path d="M129 113 Q137 118 145 113" stroke="#A6E3FA" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+
+                    <!-- Tiny Tear Drop -->
+                    <path d="M69 112 C69 112 64 119 67 122 C70 125 74 121 71 116 Z" fill="#A6E3FA"/>
+
+                    <!-- Paws Holding a Daisy -->
+                    <ellipse cx="78" cy="166" rx="14" ry="11" transform="rotate(-20 78 166)" fill="#E3AE88"/>
+                    <ellipse cx="142" cy="166" rx="14" ry="11" transform="rotate(20 142 166)" fill="#E3AE88"/>
+
+                    <!-- Daisy Flower -->
+                    <path d="M142 165 Q156 148 164 126" stroke="#7CC47F" stroke-width="3.5" stroke-linecap="round"/>
+                    <ellipse cx="155" cy="148" rx="6" ry="3.5" transform="rotate(-35 155 148)" fill="#7CC47F"/>
+                    <g transform="translate(165, 122)">
+                        <circle cx="0" cy="-9" r="6" fill="#FFFFFF" stroke="#FFE2EC" stroke-width="1"/>
+                        <circle cx="8.5" cy="-3" r="6" fill="#FFFFFF" stroke="#FFE2EC" stroke-width="1"/>
+                        <circle cx="5.5" cy="7" r="6" fill="#FFFFFF" stroke="#FFE2EC" stroke-width="1"/>
+                        <circle cx="-5.5" cy="7" r="6" fill="#FFFFFF" stroke="#FFE2EC" stroke-width="1"/>
+                        <circle cx="-8.5" cy="-3" r="6" fill="#FFFFFF" stroke="#FFE2EC" stroke-width="1"/>
+                        <circle cx="0" cy="0" r="5.5" fill="#FFD166"/>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- State 2: Joyful Smiling Teddy Bear Surrounded by Floating Hearts -->
+            <div id="bear-happy" class="hidden w-36 h-36 sm:w-44 sm:h-44 animate-happy-jump">
+                <svg viewBox="0 0 220 220" class="w-full h-full drop-shadow-sm" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Joyful smiling teddy bear surrounded by floating hearts">
+                    <!-- Warm celebratory halo -->
+                    <circle cx="110" cy="115" r="84" fill="#FFE8F0"/>
+                    <circle cx="110" cy="115" r="68" fill="#F3ECFF" opacity="0.6"/>
+
+                    <!-- Floating Hearts around Bear -->
+                    <path class="animate-heart-pop" d="M36 62 C36 56 28 56 28 62 C28 68 36 73 36 73 C36 73 44 68 44 62 C44 56 36 56 36 62 Z" fill="#FF6B8B"/>
+                    <path class="animate-heart-pop" style="animation-delay: 0.35s;" d="M185 56 C185 50 177 50 177 56 C177 62 185 67 185 67 C185 67 193 62 193 56 C193 50 185 50 185 56 Z" fill="#C084FC"/>
+                    <path class="animate-heart-pop" style="animation-delay: 0.7s;" d="M110 25 C110 19 102 19 102 25 C102 31 110 36 110 36 C110 36 118 31 118 25 C118 19 110 19 110 25 Z" fill="#FF6B8B"/>
+                    <path class="animate-heart-pop" style="animation-delay: 1s;" d="M40 132 C40 128 34 128 34 132 C34 136 40 140 40 140 C40 140 46 136 46 132 C46 128 40 128 40 132 Z" fill="#FF8FA3"/>
+
+                    <!-- Bear Ears -->
+                    <circle cx="58" cy="64" r="24" fill="#D9A077"/>
+                    <circle cx="58" cy="64" r="13" fill="#F8C6D0"/>
+                    <circle cx="162" cy="64" r="24" fill="#D9A077"/>
+                    <circle cx="162" cy="64" r="13" fill="#F8C6D0"/>
+
+                    <!-- Raised Joyful Arms -->
+                    <ellipse cx="56" cy="146" rx="14" ry="22" transform="rotate(-40 56 146)" fill="#E3AE88"/>
+                    <ellipse cx="164" cy="146" rx="14" ry="22" transform="rotate(40 164 146)" fill="#E3AE88"/>
+
+                    <!-- Bear Body -->
+                    <ellipse cx="110" cy="168" rx="46" ry="38" fill="#D9A077"/>
+                    <ellipse cx="110" cy="172" rx="28" ry="24" fill="#F5DFC6"/>
+
+                    <!-- Bear Head -->
+                    <ellipse cx="110" cy="108" rx="62" ry="54" fill="#E3AE88"/>
+
+                    <!-- Snout -->
+                    <ellipse cx="110" cy="126" rx="22" ry="16" fill="#F8E7D5"/>
+                    <!-- Cute Nose -->
+                    <ellipse cx="110" cy="118" rx="7" ry="5" fill="#54413C"/>
+                    <!-- Big Happy Smile -->
+                    <path d="M98 126 Q110 139 122 126" stroke="#54413C" stroke-width="3" stroke-linecap="round" fill="#FF8FA3"/>
+
+                    <!-- Extra Rosy Cheeks -->
+                    <ellipse cx="66" cy="120" rx="13" ry="7.5" fill="#FF6B8B" opacity="0.6"/>
+                    <ellipse cx="154" cy="120" rx="13" ry="7.5" fill="#FF6B8B" opacity="0.6"/>
+
+                    <!-- Happy Closed Arc Eyes (^ ^) -->
+                    <path d="M72 104 Q83 90 94 104" stroke="#3D2E2A" stroke-width="4" stroke-linecap="round" fill="none"/>
+                    <path d="M126 104 Q137 90 148 104" stroke="#3D2E2A" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+                    <!-- Sparkles -->
+                    <path d="M30 100 L33 93 L36 100 L43 103 L36 106 L33 113 L30 106 L23 103 Z" fill="#FFD166"/>
+                    <path d="M184 108 L186 103 L188 108 L193 110 L188 112 L186 117 L184 112 L179 110 Z" fill="#FFD166"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- APOLOGY STATE VIEW -->
+        <section id="apology-view" class="space-y-4">
+            <div>
+                <h1 class="text-2xl sm:text-3xl font-bold text-cocoa tracking-tight leading-snug">
+                    I’m Really Sorry, Ruhiya! 🥺
+                </h1>
+                <p class="mt-2 text-sm sm:text-base text-cocoaLight leading-relaxed px-1">
+                    I honestly have no idea what I did, but I hate when you’re upset with me. So I’m saying sorry anyway—no excuses!
+                </p>
+            </div>
+
+            <!-- Playful Collapsible Interactive Card: Possible Crimes -->
+            <div class="bg-gradient-to-br from-blush/90 to-lavender/65 border-2 border-dashed border-pink-200 rounded-2xl p-4 text-left">
+                <button
+                    id="toggle-crimes-btn"
+                    type="button"
+                    aria-expanded="true"
+                    class="w-full flex items-center justify-between gap-2 text-sm font-bold text-coralDark focus:outline-none cursor-pointer"
+                >
+                    <span>Possible crimes I might have committed 🔍</span>
+                    <span id="toggle-icon" class="flex-shrink-0 text-xs bg-white/90 px-2.5 py-0.5 rounded-full border border-pink-200 text-cocoaLight transition-colors">
+                        Hide
+                    </span>
+                </button>
+
+                <div id="crimes-list" class="mt-3 space-y-2">
+                    <label class="flex items-center gap-3 bg-white/85 hover:bg-white rounded-xl px-3 py-2.5 border border-pink-100 cursor-pointer transition-colors">
+                        <input type="checkbox" class="crime-checkbox w-4 h-4 rounded accent-coral cursor-pointer">
+                        <span class="crime-label text-sm text-cocoa transition-colors">Failed to read your mind 🧠</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 bg-white/85 hover:bg-white rounded-xl px-3 py-2.5 border border-pink-100 cursor-pointer transition-colors">
+                        <input type="checkbox" class="crime-checkbox w-4 h-4 rounded accent-coral cursor-pointer">
+                        <span class="crime-label text-sm text-cocoa transition-colors">Breathed too loudly 😮‍💨</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 bg-white/85 hover:bg-white rounded-xl px-3 py-2.5 border border-pink-100 cursor-pointer transition-colors">
+                        <input type="checkbox" class="crime-checkbox w-4 h-4 rounded accent-coral cursor-pointer">
+                        <span class="crime-label text-sm text-cocoa transition-colors">Did something annoying in your dream 💭</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 bg-white/85 hover:bg-white rounded-xl px-3 py-2.5 border border-pink-100 cursor-pointer transition-colors">
+                        <input type="checkbox" class="crime-checkbox w-4 h-4 rounded accent-coral cursor-pointer">
+                        <span class="crime-label text-sm text-cocoa transition-colors">Just existed wrong today 👀</span>
+                    </label>
+
+                    <p id="crime-status" class="text-[11px] text-cocoaLight text-right pt-0.5 italic">
+                        Tap any that apply (I plead guilty to all) 🙈
+                    </p>
+                </div>
+            </div>
+
+            <!-- Interactive Action Buttons -->
+            <div class="pt-1">
+                <p id="plea-hint" class="text-xs text-coralDark mb-2 min-h-[1rem] font-semibold transition-opacity duration-200 opacity-0">
+                    (Psst... there's only one right answer, Ruhiya 😉)
+                </p>
+
+                <div id="button-group" class="flex flex-col sm:flex-row items-center justify-center gap-3 min-h-[108px] sm:min-h-[64px]">
+                    <button
+                        id="yes-btn"
+                        type="button"
+                        class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-gradient-to-r from-coral to-rose-400 hover:from-coralDark hover:to-rose-500 text-white font-bold text-base shadow-[0_8px_20px_-4px_rgba(255,107,139,0.55)] active:scale-95 cursor-pointer z-20"
+                    >
+                        Yes, I forgive you 💖
+                    </button>
+
+                    <button
+                        id="no-btn"
+                        type="button"
+                        class="w-full sm:w-auto px-5 py-3 rounded-full bg-lavender/80 hover:bg-petal text-cocoaLight font-bold text-sm border border-lavenderBorder shadow-sm cursor-pointer z-30 select-none"
+                    >
+                        Still mad 😤
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CELEBRATION STATE VIEW -->
+        <section id="forgiven-view" class="hidden space-y-5 animate-fade-in">
+            <div class="space-y-2">
+                <h1 class="text-2xl sm:text-3xl font-bold text-coralDark tracking-tight">
+                    Yay!! Thank you, Ruhiya! 💖
+                </h1>
+                <p class="text-sm sm:text-base text-cocoa leading-relaxed px-2">
+                    Best decision ever. Promise to be on my best behavior (mostly).
+                </p>
+            </div>
+
+            <!-- Cute Dashed-Border Peace Offering Coupon -->
+            <div class="relative bg-gradient-to-br from-blush via-cream to-lavender border-2 border-dashed border-coral/50 rounded-2xl p-4 sm:p-5 shadow-inner text-center">
+                <div class="inline-block px-3 py-0.5 rounded-full bg-white/90 border border-pink-200 text-[11px] uppercase tracking-wider font-extrabold text-coralDark mb-2">
+                    🎟️ Peace Offering Coupon
+                </div>
+                <p class="text-xs text-cocoaLight font-semibold">
+                    Made out exclusively to
+                </p>
+                <p class="text-lg font-display font-bold text-cocoa mt-0.5">
+                    Ruhiya Anjum ✨
+                </p>
+                <div class="my-2.5 border-t border-dashed border-pink-200"></div>
+                <p class="text-xs uppercase tracking-wide font-bold text-cocoaLight">
+                    Redeemable For
+                </p>
+                <p class="text-base sm:text-lg font-display font-bold text-coralDark mt-0.5">
+                    1x Free Treat of Your Choice 🍕🍦
+                </p>
+                <p class="text-[11px] text-cocoaLight mt-1.5">
+                    Valid anytime • Zero excuses allowed
+                </p>
+            </div>
+
+            <!-- Subtle Replay Button -->
+            <div class="pt-1">
+                <button
+                    id="replay-btn"
+                    type="button"
+                    class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-white/90 hover:bg-blush text-cocoaLight hover:text-coralDark text-sm font-bold border border-pink-200 shadow-sm transition-colors duration-200 cursor-pointer"
+                >
+                    <span>↺</span>
+                    <span>Replay</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        /**
+         * Interactive Apology Webpage Logic for Ruhiya Anjum
+         * - Collapsible & interactive "Possible crimes" checklist
+         * - Smooth runaway "Still mad 😤" button (desktop hover + mobile touch safe)
+         * - Gradual scaling of "Yes, I forgive you 💖" button
+         * - Celebration view with pastel confetti & floating hearts canvas animation
+         * - Full state reset on Replay
+         */
+
+        const apologyView = document.getElementById('apology-view');
+        const forgivenView = document.getElementById('forgiven-view');
+        const bearPleading = document.getElementById('bear-pleading');
+        const bearHappy = document.getElementById('bear-happy');
+
+        const yesBtn = document.getElementById('yes-btn');
+        const noBtn = document.getElementById('no-btn');
+        const replayBtn = document.getElementById('replay-btn');
+        const pleaHint = document.getElementById('plea-hint');
+
+        const toggleCrimesBtn = document.getElementById('toggle-crimes-btn');
+        const crimesList = document.getElementById('crimes-list');
+        const toggleIcon = document.getElementById('toggle-icon');
+        const crimeCheckboxes = document.querySelectorAll('.crime-checkbox');
+        const crimeStatus = document.getElementById('crime-status');
+
+        // Personalized funny prompts for the runaway button
+        const runawayMessages = [
+            "Wait, Ruhiya! 🥺",
+            "Are you sure?",
+            "Not even for treats?",
+            "Nice try!",
+            "Pretty please? 🌸"
+        ];
+
+        let dodgeCount = 0;
+        let isRunawayActive = false;
+
+        // 1. Collapsible "Possible crimes" card
+        toggleCrimesBtn.addEventListener('click', () => {
+            const isHidden = crimesList.classList.toggle('hidden');
+            toggleIcon.textContent = isHidden ? 'Show' : 'Hide';
+            toggleCrimesBtn.setAttribute('aria-expanded', String(!isHidden));
+        });
+
+        // Update cute status text when checkboxes are toggled
+        crimeCheckboxes.forEach((checkbox) => {
+            checkbox.addEventListener('change', () => {
+                const checkedCount = document.querySelectorAll('.crime-checkbox:checked').length;
+                if (checkedCount === 0) {
+                    crimeStatus.textContent = "Tap any that apply (I plead guilty to all) 🙈";
+                } else if (checkedCount === 1) {
+                    crimeStatus.textContent = "1 crime logged — double sorry! 🥺";
+                } else if (checkedCount < crimeCheckboxes.length) {
+                    crimeStatus.textContent = `${checkedCount} crimes logged — okay, I owe you extra snacks! 🍕`;
+                } else {
+                    crimeStatus.textContent = "All 4?! Officially guilty of everything! 🏳️💖";
+                }
+            });
+        });
+
+        // 2. Runaway "Still mad 😤" button logic (Desktop & Mobile safe)
+        function moveNoButton(event) {
+            try {
+                if (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                // Update label with personalized prompts
+                const msgIndex = dodgeCount % runawayMessages.length;
+                noBtn.textContent = runawayMessages[msgIndex];
+                dodgeCount++;
+
+                // Reveal playful hint after first attempt
+                if (dodgeCount >= 1) {
+                    pleaHint.classList.remove('opacity-0');
+                    pleaHint.classList.add('opacity-100');
+                }
+
+                // Grow the primary "Yes" button gradually (capped neatly for smartphones)
+                const newScale = Math.min(1 + dodgeCount * 0.08, 1.36);
+                yesBtn.style.transform = `scale(${newScale})`;
+                yesBtn.style.boxShadow = `0 10px 28px -4px rgba(255, 107, 139, ${Math.min(0.55 + dodgeCount * 0.08, 0.9)})`;
+
+                // Switch to fixed positioning on first dodge so it roams smoothly in viewport
+                if (!isRunawayActive) {
+                    const rect = noBtn.getBoundingClientRect();
+                    noBtn.style.position = 'fixed';
+                    noBtn.style.width = 'auto';
+                    noBtn.style.left = `${rect.left}px`;
+                    noBtn.style.top = `${rect.top}px`;
+                    isRunawayActive = true;
+                }
+
+                // Calculate safe viewport boundaries so button never goes off-screen
+                const btnWidth = noBtn.offsetWidth || 160;
+                const btnHeight = noBtn.offsetHeight || 48;
+                const padding = 20;
+
+                const maxX = Math.max(padding, window.innerWidth - btnWidth - padding);
+                const maxY = Math.max(padding, window.innerHeight - btnHeight - padding);
+
+                // Avoid overlapping directly on top of the "Yes" button
+                const yesRect = yesBtn.getBoundingClientRect();
+                let randomX = padding;
+                let randomY = padding;
+                let attempts = 0;
+
+                do {
+                    randomX = padding + Math.random() * (maxX - padding);
+                    randomY = padding + Math.random() * (maxY - padding);
+                    attempts++;
+                } while (
+                    attempts < 18 &&
+                    randomX < yesRect.right + 18 &&
+                    randomX + btnWidth > yesRect.left - 18 &&
+                    randomY < yesRect.bottom + 18 &&
+                    randomY + btnHeight > yesRect.top - 18
+                );
+
+                requestAnimationFrame(() => {
+                    noBtn.style.left = `${Math.round(randomX)}px`;
+                    noBtn.style.top = `${Math.round(randomY)}px`;
+                });
+            } catch (err) {
+                console.error('Error moving runaway button:', err);
+            }
+        }
+
+        // Handle desktop hover, mobile touch, and click fallback
+        noBtn.addEventListener('mouseenter', moveNoButton);
+        noBtn.addEventListener('touchstart', moveNoButton, { passive: false });
+        noBtn.addEventListener('click', moveNoButton);
+
+        // Keep button inside safe bounds if window resizes or device rotates
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            if (isRunawayActive && !apologyView.classList.contains('hidden')) {
+                const padding = 16;
+                const currentLeft = parseFloat(noBtn.style.left) || padding;
+                const currentTop = parseFloat(noBtn.style.top) || padding;
+                const maxX = Math.max(padding, window.innerWidth - noBtn.offsetWidth - padding);
+                const maxY = Math.max(padding, window.innerHeight - noBtn.offsetHeight - padding);
+                noBtn.style.left = `${Math.min(Math.max(padding, currentLeft), maxX)}px`;
+                noBtn.style.top = `${Math.min(Math.max(padding, currentTop), maxY)}px`;
+            }
+        });
+
+        // 3. Celebration State Handler
+        yesBtn.addEventListener('click', () => {
+            apologyView.classList.add('hidden');
+            bearPleading.classList.add('hidden');
+            noBtn.classList.add('hidden');
+
+            bearHappy.classList.remove('hidden');
+            forgivenView.classList.remove('hidden');
+
+            launchCelebration();
+        });
+
+        // 4. Replay Button Handler
+        replayBtn.addEventListener('click', () => {
+            particles = [];
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            forgivenView.classList.add('hidden');
+            bearHappy.classList.add('hidden');
+
+            bearPleading.classList.remove('hidden');
+            apologyView.classList.remove('hidden');
+
+            // Reset button states
+            dodgeCount = 0;
+            isRunawayActive = false;
+
+            noBtn.classList.remove('hidden');
+            noBtn.textContent = 'Still mad 😤';
+            noBtn.style.position = '';
+            noBtn.style.left = '';
+            noBtn.style.top = '';
+            noBtn.style.width = '';
+
+            yesBtn.style.transform = 'scale(1)';
+            yesBtn.style.boxShadow = '';
+
+            pleaHint.classList.remove('opacity-100');
+            pleaHint.classList.add('opacity-0');
+
+            // Reset checkboxes
+            crimeCheckboxes.forEach((cb) => { cb.checked = false; });
+            crimeStatus.textContent = "Tap any that apply (I plead guilty to all) 🙈";
+        });
+
+        // 5. Pastel Confetti & Floating Hearts Canvas Engine
+        const canvas = document.getElementById('celebration-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animationFrameId = null;
+
+        const pastelColors = [
+            '#FF6B8B', '#FF8FA3', '#FFB3C1', '#D8B4FE',
+            '#C084FC', '#FFD166', '#A8E6CF', '#B5DEFF'
+        ];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function drawHeart(context, x, y, size, color, rotation, alpha) {
+            context.save();
+            context.translate(x, y);
+            context.rotate(rotation);
+            context.globalAlpha = alpha;
+            context.fillStyle = color;
+            context.beginPath();
+            const topCurveHeight = size * 0.3;
+            context.moveTo(0, topCurveHeight);
+            context.bezierCurveTo(0, 0, -size / 2, 0, -size / 2, topCurveHeight);
+            context.bezierCurveTo(-size / 2, (size + topCurveHeight) / 2, 0, (size + topCurveHeight) / 1.15, 0, size);
+            context.bezierCurveTo(0, (size + topCurveHeight) / 1.15, size / 2, (size + topCurveHeight) / 2, size / 2, topCurveHeight);
+            context.bezierCurveTo(size / 2, 0, 0, 0, 0, topCurveHeight);
+            context.closePath();
+            context.fill();
+            context.restore();
+        }
+
+        function launchCelebration() {
+            resizeCanvas();
+            particles = [];
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height * 0.44;
+
+            // Burst of pastel confetti & mini hearts
+            for (let i = 0; i < 90; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const speed = 3 + Math.random() * 8;
+                particles.push({
+                    type: Math.random() > 0.35 ? 'confetti' : 'heart',
+                    x: centerX + (Math.random() - 0.5) * 60,
+                    y: centerY + (Math.random() - 0.5) * 40,
+                    vx: Math.cos(angle) * speed,
+                    vy: Math.sin(angle) * speed - 4.5,
+                    size: 7 + Math.random() * 8,
+                    color: pastelColors[Math.floor(Math.random() * pastelColors.length)],
+                    rotation: Math.random() * Math.PI * 2,
+                    vRot: (Math.random() - 0.5) * 0.16,
+                    gravity: 0.16,
+                    drag: 0.985,
+                    alpha: 1,
+                    decay: 0.007 + Math.random() * 0.006
+                });
+            }
+
+            // Upward-floating pastel hearts from bottom of screen
+            for (let i = 0; i < 22; i++) {
+                particles.push({
+                    type: 'floatHeart',
+                    x: Math.random() * canvas.width,
+                    y: canvas.height + 20 + Math.random() * 140,
+                    vx: (Math.random() - 0.5) * 1.2,
+                    vy: -(1.8 + Math.random() * 2.2),
+                    size: 12 + Math.random() * 10,
+                    color: pastelColors[Math.floor(Math.random() * 5)],
+                    rotation: (Math.random() - 0.5) * 0.4,
+                    vRot: (Math.random() - 0.5) * 0.02,
+                    gravity: 0,
+                    drag: 1,
+                    alpha: 0.95,
+                    decay: 0.004
+                });
+            }
+
+            if (!animationFrameId) {
+                animateParticles();
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                p.vx *= p.drag;
+                p.vy *= p.drag;
+                p.vy += p.gravity;
+                p.x += p.vx;
+                p.y += p.vy;
+                p.rotation += p.vRot;
+                p.alpha -= p.decay;
+
+                if (p.alpha <= 0 || p.y > canvas.height + 60) {
+                    particles.splice(i, 1);
+                    continue;
+                }
+
+                if (p.type === 'confetti') {
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.rotation);
+                    ctx.globalAlpha = Math.max(0, p.alpha);
+                    ctx.fillStyle = p.color;
+                    ctx.beginPath();
+                    ctx.roundRect(-p.size / 2, -p.size / 4, p.size, p.size / 2, 3);
+                    ctx.fill();
+                    ctx.restore();
+                } else {
+                    drawHeart(ctx, p.x, p.y, p.size, p.color, p.rotation, Math.max(0, p.alpha));
+                }
+            }
+
+            if (particles.length > 0) {
+                animationFrameId = requestAnimationFrame(animateParticles);
+            } else {
+                animationFrameId = null;
+            }
+        }
+
+        window.addEventListener('load', resizeCanvas);
+    </script>
+</body>
+</html>
+```
